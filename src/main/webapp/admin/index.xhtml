@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:s="http://shiro.apache.org/tags">
+<h:head>
+    <title>Java EE 6 Starter Application</title>
+</h:head>
+<h:body>
+    <!--<s:user>-->
+    <h:form>
+        <h:commandButton value="logout" action="#{logout.submit}">
+            <f:ajax execute="@form" render="@form"/>
+        </h:commandButton>
+    </h:form>
+    <!--</s:user>-->
+
+    <h2>Users</h2>
+    <h:dataTable value="#{users}" var="user">
+        <h:column>#{user.id}</h:column>
+        <h:column>#{user.username}</h:column>
+        <h:column>#{user.password}</h:column>
+        <h:column>#{user.roles}</h:column>
+    </h:dataTable>
+
+</h:body>
+</html>
